@@ -41,3 +41,18 @@ repositories.each {
     }
   }
 }
+
+listView('OpenPaas-Suite') {
+  jobs {
+    names(repositories.toArray(new String[repositories.size()]))
+  }
+  columns {
+    status()
+    weather()
+    name()
+    lastSuccess()
+    lastFailure()
+    lastDuration()
+    buildButton()
+  }
+}
