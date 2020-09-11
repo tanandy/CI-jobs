@@ -14,6 +14,7 @@ def repositories = [
   'esn-frontend-linshare',
   'esn-frontend-login',
   'esn-frontend-mailto',
+  'esn-frontend-mailto-handler',
   'esn-frontend-videoconference-calendar'
 ]
 
