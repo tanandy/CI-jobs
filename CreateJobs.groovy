@@ -5,12 +5,14 @@ def repositories = [
   'esn-frontend-account',
   'esn-frontend-admin',
   'esn-frontend-calendar',
+  'esn-frontend-calendar-public',
   'esn-frontend-common-libs',
   'esn-frontend-contacts',
   'esn-frontend-inbox',
   'esn-frontend-inbox-calendar',
   'esn-frontend-inbox-linshare',
   'esn-frontend-linshare',
+  'esn-frontend-login',
   'esn-frontend-mailto',
   'esn-frontend-videoconference-calendar'
 ]
