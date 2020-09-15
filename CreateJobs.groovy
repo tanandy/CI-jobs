@@ -10,6 +10,7 @@ def repositories = [
   'esn-frontend-contacts',
   'esn-frontend-inbox',
   'esn-frontend-inbox-calendar',
+  'esn-frontend-inbox-james',
   'esn-frontend-inbox-linshare',
   'esn-frontend-linshare',
   'esn-frontend-login',
