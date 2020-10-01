@@ -8,6 +8,7 @@ def repositories = [
   'esn-frontend-calendar-public',
   'esn-frontend-common-libs',
   'esn-frontend-contacts',
+  'esn-frontend-group',
   'esn-frontend-inbox',
   'esn-frontend-inbox-calendar',
   'esn-frontend-inbox-james',
