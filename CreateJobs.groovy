@@ -18,7 +18,8 @@ def repositories = [
   'esn-frontend-mailto',
   'esn-frontend-mailto-handler',
   'esn-frontend-videoconference-calendar',
-  'esn-james-api-client'
+  'esn-james-api-client',
+  'openpaas-front'
 ]
 
 repositories.each {
