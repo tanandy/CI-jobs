@@ -1,4 +1,5 @@
 def repositories = [
+  'php-deps-composer',
   'esn-api-client',
   'esn-dav-import-client',
   'esn-frontend-account-inbox',
