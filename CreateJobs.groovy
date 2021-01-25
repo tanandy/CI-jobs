@@ -20,6 +20,7 @@ def repositories = [
   'esn-frontend-mailto-handler',
   'esn-frontend-videoconference-calendar',
   'esn-james-api-client',
+  'jmap-client-ts',
   'openpaas-front'
 ]
 
