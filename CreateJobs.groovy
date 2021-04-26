@@ -29,20 +29,20 @@ repositories.each {
 
   multibranchPipelineJob(repo) {
     branchSources {
-        branchSource {
-            source {
-                git {
-                    remote(repo)
-                    credentialsId('github')
-                    traits {
-                      gitBranchDiscovery()
-                      gitTagDiscovery()
-                    }
-                }
-            }
+      github {
+        id(repo)
+        scanCredentialsId('github')
+        repoOwner('OpenPaaS-Suite')
+        repository(repo)
+        buildOriginPRHead(true)
+        buildOriginBranchWithPR(false)
+        traits {
+          gitBranchDiscovery()
+          gitTagDiscovery()
         }
+      }
     }
-    configure {
+	configure {
       def traits = it / sources / data / 'jenkins.branch.BranchSource' / source / traits
       
       traits << 'org.jenkinsci.plugins.github__branch__source.BranchDiscoveryTrait' {
@@ -52,7 +52,7 @@ repositories.each {
         strategyId(1)
       }
       traits << 'org.jenkinsci.plugins.github__branch__source.TagDiscoveryTrait'()
-  }
+    }
     triggers {
       periodicFolderTrigger {
         interval('1')
