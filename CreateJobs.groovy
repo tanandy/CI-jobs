@@ -34,21 +34,25 @@ repositories.each {
                 git {
                     remote(repo)
                     credentialsId('github')
-                }
-            }
-            strategy {
-                defaultBranchPropertyStrategy {
-                    props {
-                        noTriggerBranchProperty()
+                    traits {
+                      gitBranchDiscovery()
+                      gitTagDiscovery()
                     }
                 }
             }
         }
     }
     configure {
-        def traits = it / sources / data / 'jenkins.branch.BranchSource' / source / traits
-        traits << 'jenkins.plugins.git.traits.BranchDiscoveryTrait' {}
-    }
+      def traits = it / sources / data / 'jenkins.branch.BranchSource' / source / traits
+      
+      traits << 'org.jenkinsci.plugins.github__branch__source.BranchDiscoveryTrait' {
+        strategyId(1)
+      }
+      traits << 'org.jenkinsci.plugins.github__branch__source.OriginPullRequestDiscoveryTrait' {
+        strategyId(1)
+      }
+      traits << 'org.jenkinsci.plugins.github__branch__source.TagDiscoveryTrait'()
+  }
     triggers {
       periodicFolderTrigger {
         interval('1')
