@@ -29,16 +29,21 @@ repositories.each {
 
   multibranchPipelineJob(repo) {
     branchSources {
-      source{
-        git {
-          credentialsId('github')
-          remote(repo)
-          traits {
-            gitBranchDiscovery()
-            gitTagDiscovery()
-          }
+        branchSource {
+            source {
+                git {
+                    remote(repo)
+                    credentialsId('github')
+                }
+            }
+            strategy {
+                defaultBranchPropertyStrategy {
+                    props {
+                        noTriggerBranchProperty()
+                    }
+                }
+            }
         }
-      }
     }
     configure {
         def traits = it / sources / data / 'jenkins.branch.BranchSource' / source / traits
