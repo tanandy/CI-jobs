@@ -36,6 +36,10 @@ repositories.each {
         repository(repo)
         buildOriginPRHead(true)
         buildOriginBranchWithPR(false)
+        traits {
+          gitBranchDiscovery()
+          gitTagDiscovery()
+        }
       }
     }
     triggers {
