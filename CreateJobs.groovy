@@ -29,12 +29,14 @@ repositories.each {
 
   multibranchPipelineJob(repo) {
     branchSources {
-      git {
-        credentialsId('github')
-        remote(repo)
-        traits {
-          gitBranchDiscovery()
-          gitTagDiscovery()
+      source{
+        git {
+          credentialsId('github')
+          remote(repo)
+          traits {
+            gitBranchDiscovery()
+            gitTagDiscovery()
+          }
         }
       }
     }
