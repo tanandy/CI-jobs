@@ -29,13 +29,9 @@ repositories.each {
 
   multibranchPipelineJob(repo) {
     branchSources {
-      github {
-        id(repo)
-        scanCredentialsId('github')
-        repoOwner('OpenPaaS-Suite')
-        repository(repo)
-        buildOriginPRHead(true)
-        buildOriginBranchWithPR(false)
+      git {
+        credentialsId('github')
+        remote(repo)
         traits {
           gitBranchDiscovery()
           gitTagDiscovery()
