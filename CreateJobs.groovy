@@ -27,7 +27,7 @@ def repositories = [
 repositories.each {
   def repo = it
 
-  multibranchPipelineJob("Tmail build") {
+  multibranchPipelineJob(repo) {
     branchSources {
         branchSource {
             source {
