@@ -38,8 +38,6 @@ repositories.each {
                     repository(repo)
                     repositoryUrl('')
                     configuredByUrl(false)
-                    buildOriginPRHead(true)
-                    buildOriginBranchWithPR(false)
                     traits {
                         gitHubTagDiscovery()
                         gitHubBranchDiscovery { strategyId(1) }
