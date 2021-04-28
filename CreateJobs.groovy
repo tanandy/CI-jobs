@@ -51,14 +51,7 @@ repositories.each {
                         ignoreTargetOnlyChanges(true)
                         ignoreUntrustedChanges(false)
                     }
-                    buildNamedBranches {
-                        filters {
-                            exact {
-                                name('master')
-                                caseSensitive(true)
-                            }
-                        }
-                    }
+                    buildRegularBranches()
                     buildTags {
                         atLeastDays '-1'
                         atMostDays '14'
